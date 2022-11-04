@@ -1,21 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div>
+      <header>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Bienvenidos al Proyecto "Sistema de Verificación de Habilitación de Oficiales de Mesa de Control"
         </p>
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://fbpm.com.ar/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          A crear !!!
         </a>
       </header>
     </div>
