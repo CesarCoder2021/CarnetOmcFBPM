@@ -1,20 +1,12 @@
-import './App.css';
+import IngresoDato from "./components/IngresoDato.js";
+import NavBar from "./components/NavBar.js";
 
-function App() {
+const App=() => {
   return (
     <div>
-      <header>
-        <p>
-          Bienvenidos al Proyecto "Sistema de Verificación de Habilitación de Oficiales de Mesa de Control"
-        </p>
-        <a
-          href="https://fbpm.com.ar/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          A crear !!!
-        </a>
-      </header>
+      <NavBar /> 
+      <h1>Sistema de verificación de habilitación</h1>
+      <IngresoDato />
     </div>
   );
 }
