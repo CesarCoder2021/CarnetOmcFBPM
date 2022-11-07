@@ -1,21 +1,18 @@
-<<<<<<< HEAD
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter, Route,Routes, Link} from 'react-router-dom';
 import Inicio from './components/Inicio';
-=======
-import IngresoDato from "./components/IngresoDato.js";
-import NavBar from "./components/NavBar.js";
->>>>>>> c856b88fb643121f5344d5a3f1fc110ff528430d
+import Buscar from './components/Buscar';
 
 const App=() => {
   return (
     <div>
-<<<<<<< HEAD
-      <Inicio />
-=======
-      <NavBar /> 
-      <h1>Sistema de verificación de habilitación</h1>
-      <IngresoDato />
->>>>>>> c856b88fb643121f5344d5a3f1fc110ff528430d
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={ <Inicio /> } />
+          <Route path='/buscar' element={ <Buscar /> } />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
