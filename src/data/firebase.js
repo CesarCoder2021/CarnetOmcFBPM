@@ -1,20 +1,20 @@
 const data = [
     {
+        dni:'10100100',
         nombre: 'Lionel Messi',
-        edad:18,
-        dni:12234456,
-        club: ' Argentina '
+        nivel: 1,
+        habilitado: 'SI'
     },
     {
-        nombre: 'Luis Suarez',
-        edad:18,
-        dni:12234456,
-        club: ' Uruguay '
-    },{
+        dni:'70700700',
         nombre: 'Cristiano Ronaldo',
-        edad:18,
-        dni:12234456,
-        club: ' Portugal '
+        nivel: 2,
+        habilitado: 'SI'
+    },{
+        dni:'90900900',
+        nombre: 'Luis Suarez',
+        nivel: 3,
+        habilitado: 'NO'
     }
 ]
 

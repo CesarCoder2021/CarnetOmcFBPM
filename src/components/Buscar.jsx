@@ -26,12 +26,12 @@ const Buscar = ( ) => {
         buscarJugador()
     },[])
 
-    const bdata = data.filter(x=>x.nombre.toLowerCase().includes(texto.toString().toLowerCase()))
+    const bdata = data.filter(x=>x.dni.toLowerCase().includes(texto.toString().toLowerCase()))
  
     return(
         <>
             <label>Ingrese número de DNI</label><br />
-            <input type="text" value={texto} onChange={buscador} placeholder="Lucas López"/>
+            <input type="text" value={texto} onChange={buscador} placeholder="Por ej: 20600100"/>
             {
                 texto.length !==0?(
                     <div>
@@ -41,17 +41,32 @@ const Buscar = ( ) => {
                                     {
                                     bdata.map((jugador)=>{
                                         return <>
-                                        <p> <b> Nombre:</b> {jugador.nombre} </p>
+                                        <p> FOTO </p>
                                         <p> <b> DNI:</b> {jugador.dni} </p>
-                                        <p> <b> Edad:</b> {jugador.edad} </p>
-                                        <p> <b> Club:</b> {jugador.club} </p>
+                                        <p> <b> Nombre y apellido:</b> {jugador.nombre} </p>
+                                        <p> <b> Nivel:</b> {jugador.nivel} </p>
+                                        {
+                                            jugador.habilitado==='NO'?(
+                                                <div>
+                                                    <p><b>Habilitado:</b> ❌ </p>
+                                                </div>
+                                            )
+                                        : 
+                                            (
+                                                <div>
+                                                    <div>
+                                                        <p><b> Habilitado:</b> ✔️</p>
+                                                    </div>
+                                                </div>
+                                            )
+                                        }
                                         </>
                                     })
                                     }
                                 </div>
                             ) : (
                                 <div>
-                                    <h2>No se encontró ningun jugador llamado "{texto}" </h2>
+                                    <h4>No se encontró ningun DNI número "{texto}" </h4>
                                 </div>
                             )
                         }
