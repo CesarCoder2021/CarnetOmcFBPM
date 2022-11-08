@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import data from "../data/firebase";
+import { collection, getDocs } from 'firebase/firestore';
+import db from '../data/firebase';
+import Card from 'react-bootstrap/Card';
 
 const Buscar = ( ) => {
 
@@ -9,72 +11,65 @@ const Buscar = ( ) => {
         setTexto(target.value)
     }
 
-    const [jugador, setJugador] = useState([])
+    const [arbitro, setArbitro] = useState([])
 
 
-    const buscarJugador = ( ) => {
-
-        const url = data
-
-        fetch(url)
-         .then((resp)=> resp.json())
-         .then((data)=> setJugador(data))
-
+    const buscarArbitro=async()=>{
+        try{
+            const document = collection(db,"fichas-omc")
+            const col = await getDocs(document)
+            const result = col.docs.map((doc)=> doc={id:doc.id,...doc.data()})
+            setArbitro(result)
+        }catch(error){
+            console.log(error)
+        }
     }
 
     useEffect(()=>{
-        buscarJugador()
+        buscarArbitro()
     },[])
 
-    const bdata = data.filter(x=>x.dni.toLowerCase().includes(texto.toString().toLowerCase()))
+    const bdata = arbitro.filter(x=>x.dni.toLowerCase().includes(texto.toString().toLowerCase()))
  
     return(
         <>
             <label>Ingrese número de DNI</label><br />
             <input type="text" value={texto} onChange={buscador} placeholder="Por ej: 20600100"/>
             {
-                texto.length !==0?(
-                    <div>
-                        {
-                            bdata.length!==0?(
-                                <div>
-                                    {
-                                    bdata.map((jugador)=>{
-                                        return <>
-                                        <p> FOTO </p>
-                                        <p> <b> DNI:</b> {jugador.dni} </p>
-                                        <p> <b> Nombre y apellido:</b> {jugador.nombre} </p>
-                                        <p> <b> Nivel:</b> {jugador.nivel} </p>
-                                        {
-                                            jugador.habilitado==='NO'?(
-                                                <div>
-                                                    <p><b>Habilitado:</b> ❌ </p>
-                                                </div>
-                                            )
-                                        : 
-                                            (
-                                                <div>
-                                                    <div>
-                                                        <p><b> Habilitado:</b> ✔️</p>
-                                                    </div>
-                                                </div>
-                                            )
-                                        }
-                                        </>
+                texto.length!==0?(
+                    <div>{
+                        bdata?(
+                            <div>
+                                {
+                                    bdata.map((x)=>{
+                                        return <Card style={{ width: '14rem' }}>
+                                        <Card.Img variant="top" src={x.image} />
+                                        <Card.Body>
+                                          <Card.Title> {x.nombre} {x.apellido} </Card.Title>
+                                          <Card.Text>
+                                            DNI: {x.dni} <br />
+                                            Nivel: {x.description} <br />
+                                            {
+                                                x.habilitacion === true ? (
+                                                    <p> Está habilitado/a ✔️ </p>
+                                                ) : (
+                                                    <p> No está habilitado/a ❌ </p>
+                                                )
+                                            }
+                                          </Card.Text>
+                                        </Card.Body>
+                                      </Card>
                                     })
-                                    }
-                                </div>
-                            ) : (
-                                <div>
-                                    <h4>No se encontró ningun DNI número "{texto}" </h4>
-                                </div>
-                            )
-                        }
-                    </div>
+                                }
+                            </div>
+                        ):(
+                            <div>
+                                <h4>hola</h4>
+                            </div>
+                        )           
+                    }</div>
                 ) : (
-                    <div>
-                        
-                    </div>
+                    <div></div>
                 )
             }
         </>

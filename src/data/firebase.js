@@ -1,21 +1,17 @@
-const data = [
-    {
-        dni:'10100100',
-        nombre: 'Lionel Messi',
-        nivel: 1,
-        habilitado: 'SI'
-    },
-    {
-        dni:'70700700',
-        nombre: 'Cristiano Ronaldo',
-        nivel: 2,
-        habilitado: 'SI'
-    },{
-        dni:'90900900',
-        nombre: 'Luis Suarez',
-        nivel: 3,
-        habilitado: 'NO'
-    }
-]
+import { initializeApp } from "firebase/app";
+import { getFirestore } from 'firebase/firestore';
 
-export default data;
+const firebaseConfig = {
+  apiKey: "AIzaSyDVYc13kAHy3PcnrVl1cqY7MLRekAZB5vA",
+  authDomain: "omc-fbpm-11286.firebaseapp.com",
+  projectId: "omc-fbpm-11286",
+  storageBucket: "omc-fbpm-11286.appspot.com",
+  messagingSenderId: "279904487180",
+  appId: "1:279904487180:web:65c72af03fb9ab5ff36b29"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+export default db;
