@@ -2,15 +2,10 @@ import React, { useState, useEffect } from "react";
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../data/firebase';
 import Card from 'react-bootstrap/Card';
-<<<<<<< Updated upstream
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-
 import "../style/buscar.css";
 
-=======
-import { Button } from "react-bootstrap";
->>>>>>> Stashed changes
 
 const Buscar = ( ) => {
 
@@ -41,16 +36,12 @@ const Buscar = ( ) => {
     const bdata = arbitro.filter(x=>x.dni.toLowerCase().includes(texto.toString().toLowerCase()))
 
     return(
-<<<<<<< Updated upstream
+        
         <div className="verificar">
-            <label className="ingresoDni">Ingrese número de DNI</label>
-=======
-        <>
             <form>
-            <label>Ingrese número de DNI</label><br />
->>>>>>> Stashed changes
-            <input type="text" value={texto} onChange={buscador} placeholder="Por ej: 20600100"/>
-            <Button type="submit"> buscar</Button>
+                <label className="ingresoDni">Ingrese número de DNI</label><br />
+                <input type="text" value={texto} onChange={buscador} placeholder="Por ej: 20600100"/>
+                <Button type="submit"> buscar</Button>
             </form>
             {
                 texto.length!==0?(
