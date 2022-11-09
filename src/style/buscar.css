@@ -1,3 +1,7 @@
+.buscarContainer{
+    background-color: var(--color-base);
+    padding: 20px 10px;
+}
 .verificar {
     padding-top: 20px;
     width: 100%;
@@ -29,4 +33,7 @@
     width: 80%;
     margin-left: 10%;
     text-align: center;
+}
+.volver{
+    
 }
