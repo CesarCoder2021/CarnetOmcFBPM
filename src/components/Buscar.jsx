@@ -35,56 +35,57 @@ const Buscar = ( ) => {
     
     const bdata = arbitro.filter(x=>x.dni.toLowerCase().includes(texto.toString().toLowerCase()))
 
+    const A = ( e ) => {
+        e.preventDefault()
+        buscador()
+    }
+
     return(
         
         <div className="verificar">
-            <form>
+            <form onSubmit={A}>
                 <label className="ingresoDni">Ingrese número de DNI</label><br />
                 <input type="text" value={texto} onChange={buscador} placeholder="Por ej: 20600100"/>
-                <Button type="submit"> buscar</Button>
+                <Button type="submit" className="mx-1">  🔍 </Button>
             </form>
             {
-                texto.length!==0?(
-                    <div>{
-                        bdata?(
-                            <div>
-                                {
-                                    bdata.map((x)=>{
-                                        return <Card style={{ width: '14rem' }}>
-                                        <Card.Img variant="top" src={x.image} />
-                                        <Card.Body>
-                                          <Card.Title> {x.nombre} {x.apellido} </Card.Title>
-                                          <Card.Text>
-                                            DNI: {x.dni} <br />
-                                            Nivel: {x.description} <br />
-                                            {
-                                                x.habilitacion === true ? (
-                                                    <p> Está habilitado/a ✔️ </p>
-                                                ) : (
-                                                    <p> No está habilitado/a ❌ </p>
-                                                )
-                                            }
-                                          </Card.Text>
-                                        </Card.Body>
-                                      </Card>
-                                    })
-                                }
-                            </div>
-                        ):(
-                            <div>
-                                <h4>hola</h4>
-                            </div>
-                        )           
-                    }</div>
-                ) : (
-                    <div></div>
-                )
-            }
+                texto.length>0?<div>
+                {
+                    bdata.length!==0?  (
+                                <div>
+                                    {
+                                        bdata.map((x)=>{
+                                            return <Card style={{ width: '14rem' }}>
+                                            <Card.Img variant="top" src={x.image} />
+                                            <Card.Body>
+                                                <Card.Title> {x.nombre} {x.apellido} </Card.Title>
+                                                <Card.Text>
+                                                DNI: {x.dni} <br />
+                                                Nivel: {x.description} <br />
+                                                {
+                                                    x.habilitacion === true ? (
+                                                        <p> ✔️ <b> Está habilitado/a </b>   </p>
+                                                    ) : (
+                                                        <p> ❌ <b> No está habilitado/a </b>  </p>
+                                                    )
+                                                }
+                                                </Card.Text>
+                                            </Card.Body>
+                                            </Card>
+                                        })
+                                    }
+                                </div>
+                            ):(
+                                <h4>No hay coincidencias con "{texto}" </h4>
+                            )
+                }               </div> 
+                : <div> </div>        
+            } 
             <Link to='/'>
                     <Button className="botonVolver">
                         Nueva Verificación
                     </Button>
-                </Link>
+            </Link>
         </div>
     )
 }
