@@ -5,15 +5,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    padding-top: 20px;
+    font-family: 'Asap Condensed', sans-serif;;
+}
+.imgLogo{
+    width: 200px;
 }
 .tituloPrincipal {
     text-align: center;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     font-size: 2rem;
     font-weight: 600;
     color: white;
+    padding-top: 20px;
 }
 .botonesInicio {
     display: flex;

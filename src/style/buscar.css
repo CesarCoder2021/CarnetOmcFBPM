@@ -1,30 +1,30 @@
 .verificar {
+    padding-top: 20px;
     width: 100%;
     height: 100vh;
     background-color: var(--color-base);
-    font-family: var(--font-base);
+    font-family: 'Asap Condensed', sans-serif;;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
 }
 .ingresoDni {
     font-size: 1.5rem;
     color: white;
     text-align: center;
 }
-.botonVolver {
-    width: 10rem;
-    height: 3rem;
-    margin: 0 auto;
-    background-color: #FF8000;
-    border: 10px;
-    border-color: white;
-    border-radius: 5px;
-    font-family: var(--font-base);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-base);
-    margin: 1rem;
-    box-shadow: 3px 3px 5px black;
+.card{
+    width:14rem;
+    margin-top: 40px;
+    text-align: center;
+}
+.input{
+    padding: 5px;
+}
+.ceroResultados{
+    color: white;
+    padding-top: 20px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
 }

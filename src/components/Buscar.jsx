@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../data/firebase';
 import Card from 'react-bootstrap/Card';
-import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import "../style/buscar.css";
 
 const Buscar = ( ) => {
@@ -37,13 +35,10 @@ const Buscar = ( ) => {
     return(
         
         <div className="verificar">
-            <form>
-                <label className="ingresoDni">Ingrese número de DNI</label><br />
-                <input type="text" value={texto} onChange={buscador} placeholder="Por ej: 20600100"/>
-                <Button className="mx-1">  🔍 </Button>
-            </form>
             
-            
+            <label className="ingresoDni">Ingrese número de DNI</label><br />
+            <input className="input" type="text" maxLength={8} value={texto} onChange={buscador} placeholder="Por ej: 12345678"/>
+                
             {
                 texto.length===8?<div>
                 {
@@ -51,7 +46,7 @@ const Buscar = ( ) => {
                                 <div>
                                     {
                                         bdata.map((x)=>{
-                                            return <Card style={{ width: '14rem' }}>
+                                            return <Card className='card'>
                                             <Card.Img variant="top" src={x.image} />
                                             <Card.Body>
                                                 <Card.Title> {x.nombre} {x.apellido} </Card.Title>
@@ -60,9 +55,9 @@ const Buscar = ( ) => {
                                                 Nivel: {x.description} <br />
                                                 {
                                                     x.habilitacion === true ? (
-                                                        <p> ✔️ <b> Está habilitado/a </b>   </p>
+                                                        <> ✔️ <b> Está habilitado/a </b>   </>
                                                     ) : (
-                                                        <p> ❌ <b> No está habilitado/a </b>  </p>
+                                                        <> ❌ <b> No está habilitado/a </b>  </>
                                                     )
                                                 }
                                                 </Card.Text>
@@ -72,16 +67,11 @@ const Buscar = ( ) => {
                                     }
                                 </div>
                             ):(
-                                <h4>No hay coincidencias con "{texto}" </h4>
+                                <h4 className="ceroResultados">No hay coincidencias con "{texto}" </h4>
                             )
                 }               </div> 
                 : <div> </div>        
             } 
-            <Link to='/'>
-                    <Button className="botonVolver">
-                        Nueva Verificación
-                    </Button>
-            </Link>
         </div>
     )
 }

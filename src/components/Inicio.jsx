@@ -7,7 +7,7 @@ const Inicio = ( ) => {
     return (
         <div className="portadaInicial">
             <div className="imgLogoInicio">
-                <img src="img/logo-chico-fbpm.png" alt="Logo FBPM" />
+                <img className="imgLogo" src="img/logo-chico-fbpm.png" alt="Logo FBPM" />
             </div>
 
             <h3 className="tituloPrincipal">
