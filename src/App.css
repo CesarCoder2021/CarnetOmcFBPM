@@ -1,0 +1,10 @@
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --color-base: #800000;
+    --color-pelota: #FF8000;
+    --color-grises: #ABB8C3;
+    --font-base: 'Signika', sans-serif;
+    width: 100%;
+}

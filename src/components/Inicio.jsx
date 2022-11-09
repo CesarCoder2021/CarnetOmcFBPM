@@ -5,7 +5,7 @@ import ("../style/inicio.css");
 
 const Inicio = ( ) => {
     return (
-        <div>
+        <div className="portadaInicial">
             <div className="imgLogoInicio">
                 <img src="img/logo-chico-fbpm.png" alt="Logo FBPM" />
             </div>
@@ -13,18 +13,18 @@ const Inicio = ( ) => {
             <h3 className="tituloPrincipal">
                 Sistema de verificación de habilitaciones
             </h3>
-            <Link to='/admin'>
-                <Button>
-                    Administrar
-                </Button>
-            </Link>
-            <br />
-            <br />
-            <Link to='/buscar'>
-                <Button>
-                    Verificar
-                </Button>
-            </Link>
+            <div className="botonesInicio">
+                <Link to='/admin'>
+                    <Button className="botonAdmin">
+                        Administrar
+                    </Button>
+                </Link>
+                <Link to='/buscar'>
+                    <Button className="botonVerificar">
+                        Verificar
+                    </Button>
+                </Link>
+            </div>
 
         </div>
     )
