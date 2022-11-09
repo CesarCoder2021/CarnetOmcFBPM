@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../data/firebase';
 import Card from 'react-bootstrap/Card';
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+
+import "../style/buscar.css";
+
 
 const Buscar = ( ) => {
 
@@ -32,8 +37,8 @@ const Buscar = ( ) => {
     const bdata = arbitro.filter(x=>x.dni.toLowerCase().includes(texto.toString().toLowerCase()))
  
     return(
-        <>
-            <label>Ingrese número de DNI</label><br />
+        <div className="verificar">
+            <label className="ingresoDni">Ingrese número de DNI</label>
             <input type="text" value={texto} onChange={buscador} placeholder="Por ej: 20600100"/>
             {
                 texto.length!==0?(
@@ -72,7 +77,12 @@ const Buscar = ( ) => {
                     <div></div>
                 )
             }
-        </>
+            <Link to='/'>
+                    <Button className="botonVolver">
+                        Nueva Verificación
+                    </Button>
+                </Link>
+        </div>
     )
 }
 
