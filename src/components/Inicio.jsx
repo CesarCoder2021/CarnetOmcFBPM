@@ -85,11 +85,7 @@ const Inicio = ( props ) => {
                                                             }
                                                             <img src="img/logo-chico-fbpm.png" alt="Logo FBPM" className="my-2" />
                                                         </Modal.Body>
-                                                        <Modal.Footer>
-                                                        <Button variant="danger" onClick={handleClose}>
-                                                            Cerrar
-                                                        </Button>
-                                                        </Modal.Footer>
+                                                        
                                                     </Modal>
                                         })
                                     }
