@@ -67,7 +67,7 @@ const Inicio = ( props ) => {
                                             size="lg"
                                             aria-labelledby="contained-modal-title-vcenter"
                                             centered style={{textAlign:'center'}}>
-                                                        <ModalHeader >
+                                                        <ModalHeader closeButton >
                                                             <Modal.Title>
                                                                 {x.apellido} {x.nombre}
                                                             </Modal.Title>
