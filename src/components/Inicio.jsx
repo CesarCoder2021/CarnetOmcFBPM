@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from "react";
-import { Link } from "react-router-dom";
 import { Button, ModalHeader } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
 import { collection, getDocs } from 'firebase/firestore';
@@ -59,23 +58,30 @@ const Inicio = ( props ) => {
                         bdata.length?  (
                                 <div>
                                   <Button className="botonVerificar" onClick={handleShow}>
-                                        Ver
+                                        Verificar
                                     </Button>
                                     {
                                         bdata.map((x)=>{
-                                            return <Modal show={show} onHide={handleClose} {...props}
-                                            size="lg"
-                                            aria-labelledby="contained-modal-title-vcenter"
-                                            centered style={{textAlign:'center'}}>
-                                                        <ModalHeader closeButton >
-                                                            <Modal.Title>
-                                                                {x.apellido} {x.nombre}
+                                            return <Modal className="modal" show={show} onHide={handleClose} {...props}
+                                                size="lg"
+                                                aria-labelledby="contained-modal-title-vcenter"
+                                                centered style={{textAlign:'center'}}>
+                                                        <ModalHeader closeButton>
+                                                            <Modal.Title className="nombreModal">
+                                                                <h4 className="nombreModal-funcion">Oficial Mesa Control</h4> 
                                                             </Modal.Title>
                                                         </ModalHeader>
                                                         <Modal.Body>
-                                                           <img className="my-2 imgPersonaModal" src={x.image} alt="" />
-                                                           <h5> DNI: {x.dni} </h5> 
-                                                           <h5> {x.description}  </h5>
+                                                            <div className="modal-foto-dato">
+                                                                <img className="my-2 imgPersonaModal" src={x.image} alt="foto de OMC" />
+                                                                <div>
+                                                                    <h4 className="modal-apellido">{x.apellido}</h4> 
+                                                                    <h4 className="modal-nombre">{x.nombre}</h4>
+                                                                    <h5 className="modal-dni"> DNI: {x.dni} </h5>
+                                                                </div>
+                                                            </div> 
+                                                           
+                                                           <h5 className="nivelHabilitado"> {x.description}  </h5>
                                                            {
                                                                 x.habilitacion === true ? (
                                                                     <h5> ✔️ <b> Está habilitado/a </b>   </h5>
