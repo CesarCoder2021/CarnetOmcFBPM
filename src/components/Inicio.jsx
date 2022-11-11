@@ -40,13 +40,7 @@ const Inicio = ( props ) => {
 
     return (
         <div className="portadaInicial">
-            <div className="imgLogoInicio">
-                <img className="imgLogo" src="img/logo-chico-fbpm.png" alt="Logo FBPM" />
-            </div>
 
-            <h3 className="tituloPrincipal">
-                Sistema de verificación de habilitaciones
-            </h3>
             <div className="botonesInicio">
                 <label className="ingresoDni">Ingrese número de DNI</label><br />
                 <input className="input" type="text" maxLength={8} value={texto} onChange={buscador} placeholder="Por ej: 12345678"/>
@@ -101,7 +95,16 @@ const Inicio = ( props ) => {
                                 )
                     }               </div> 
                     : <div> </div>        
-                } 
+                }
+
+            <h3 className="tituloPrincipal">
+                Sistema de verificación de habilitaciones
+            </h3>
+
+            <div className="imgLogoInicio">
+                <img className="imgLogo" src="img/logo-chico-fbpm.png" alt="Logo FBPM" />
+            </div>            
+ 
 
         </div>
     )
