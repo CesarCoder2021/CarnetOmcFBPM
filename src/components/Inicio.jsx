@@ -62,7 +62,7 @@ const Inicio = ( props ) => {
                                                 centered style={{textAlign:'center'}}>
                                                         <ModalHeader closeButton>
                                                             <Modal.Title className="nombreModal">
-                                                                <h4 className="nombreModal-funcion">Oficial Mesa Control</h4> 
+                                                                <h4 className="nombreModal-funcion">{x.funcion}</h4> 
                                                             </Modal.Title>
                                                         </ModalHeader>
                                                         <Modal.Body>
