@@ -11,7 +11,7 @@
 }
 
 .imgLogo{
-    width: 200px;
+    width: 150px;
     margin-bottom: 2rem;
 }
 .tituloPrincipal {
@@ -63,6 +63,9 @@
     background-size: cover;
     background-position: top;
 }
+.btn-close {
+    background-color: #FF8000;
+}
 .modal-foto-dato {
     display: flex;
     justify-content: space-between;
@@ -92,8 +95,8 @@
 }
 .ceroResultados{
     color: white;
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
     text-align: center;
 }
 .nombreModal-funcion {
@@ -102,24 +105,24 @@
     text-align: center;
     color: var(--color-pelota);
 }
-.nivelHabilitado {
-    height: 5rem;
+.niveles {
+    margin: 6rem 0 3rem 0;
 }
-.niveles{
+.nivelVerde{
     background-color: var(--color-base);
-    margin: 5px;
-    padding: 10px;
-    font-size: 20px;
+    margin: 10px;
+    padding: 0.7rem;
+    font-size: 2rem;
     color: white;
     font-weight: bold;
-    border: 5px solid rgb(12, 209, 12);
+    border: 8px solid rgb(12, 209, 12);
 }
 .nivelRojo{
     background-color: var(--color-base);
-    margin: 5px;
-    padding: 10px;
-    font-size: 20px;
+    margin: 10px;
+    padding: 0.7rem;
+    font-size: 2rem;
     color: white;
     font-weight: bold;
-    border: 5px solid rgb(248, 19, 19);
+    border: 8px solid rgb(248, 19, 19);
 }

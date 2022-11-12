@@ -74,9 +74,9 @@ const Inicio = ( props ) => {
                                                                     <h5 className="modal-dni"> DNI: {x.dni} </h5>
                                                                 </div>
                                                             </div> 
-                                                            <div>
+                                                            <div className="niveles">
                                                                 {x.nivel1===true?(
-                                                                                    <button className="niveles" >
+                                                                                    <button className="nivelVerde" >
                                                                                         N1{x.nivel1}
                                                                                     </button>)
                                                                                 : (
@@ -85,7 +85,7 @@ const Inicio = ( props ) => {
                                                                                     </button>)
                                                                 }
                                                                 {x.nivel2===true?(
-                                                                                    <button className="niveles" >
+                                                                                    <button className="nivelVerde" >
                                                                                         N2{x.nivel1}
                                                                                     </button>)
                                                                                 : (
@@ -94,7 +94,7 @@ const Inicio = ( props ) => {
                                                                                     </button>)
                                                                 }
                                                                 {x.nivel3===true?(
-                                                                                    <button className="niveles" >
+                                                                                    <button className="nivelVerde" >
                                                                                         N3{x.nivel1}
                                                                                     </button>)
                                                                                 : (
@@ -104,15 +104,6 @@ const Inicio = ( props ) => {
                                                                 }
                                                                 
                                                             </div>
-                                                           
-                                                           <h5 className="nivelHabilitado"> {x.description}  </h5>
-                                                           {
-                                                                x.habilitacion === true ? (
-                                                                    <h5> ✔️ <b> Está habilitado/a </b>   </h5>
-                                                                ) : (
-                                                                    <h5> ❌ <b> No está habilitado/a </b>  </h5>
-                                                                )
-                                                            }
                                                             <img src="img/logo-chico-fbpm.png" alt="Logo FBPM" className="my-2" />
                                                         </Modal.Body>
                                                         
@@ -121,8 +112,12 @@ const Inicio = ( props ) => {
                                     }
                                 </div>
                                 ):(
-                                    <h4 className="ceroResultados">No hay coincidencias con "{texto}" </h4>
-                                )
+                                    <div className="ceroResultados">
+                                        <h4>El documento "{texto}"</h4>
+                                        <h4>NO ESTÁ REGISTRADO</h4>
+                                        <h4>como Oficial de Mesa de Control</h4>
+                                    </div>
+                                    )
                     }               </div> 
                     : <div> </div>        
                 }
