@@ -127,10 +127,6 @@ const Inicio = ( props ) => {
                     : <div> </div>        
                 }
 
-            <h3 className="tituloPrincipal">
-                Sistema de verificación de habilitaciones
-            </h3>
-
             <div className="imgLogoInicio">
                 <img className="imgLogo" src="img/logo-chico-fbpm.png" alt="Logo FBPM" />
             </div>            
