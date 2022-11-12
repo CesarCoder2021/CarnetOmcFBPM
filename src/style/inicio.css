@@ -105,3 +105,21 @@
 .nivelHabilitado {
     height: 5rem;
 }
+.niveles{
+    background-color: var(--color-base);
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    border: 5px solid rgb(12, 209, 12);
+}
+.nivelRojo{
+    background-color: var(--color-base);
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    border: 5px solid rgb(248, 19, 19);
+}

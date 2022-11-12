@@ -74,6 +74,36 @@ const Inicio = ( props ) => {
                                                                     <h5 className="modal-dni"> DNI: {x.dni} </h5>
                                                                 </div>
                                                             </div> 
+                                                            <div>
+                                                                {x.nivel1===true?(
+                                                                                    <button className="niveles" >
+                                                                                        N1{x.nivel1}
+                                                                                    </button>)
+                                                                                : (
+                                                                                    <button className="nivelRojo" >
+                                                                                        N1{x.nivel1}
+                                                                                    </button>)
+                                                                }
+                                                                {x.nivel2===true?(
+                                                                                    <button className="niveles" >
+                                                                                        N2{x.nivel1}
+                                                                                    </button>)
+                                                                                : (
+                                                                                    <button className="nivelRojo" >
+                                                                                        N2{x.nivel1}
+                                                                                    </button>)
+                                                                }
+                                                                {x.nivel3===true?(
+                                                                                    <button className="niveles" >
+                                                                                        N3{x.nivel1}
+                                                                                    </button>)
+                                                                                : (
+                                                                                    <button className="nivelRojo" >
+                                                                                        N3{x.nivel1}
+                                                                                    </button>)
+                                                                }
+                                                                
+                                                            </div>
                                                            
                                                            <h5 className="nivelHabilitado"> {x.description}  </h5>
                                                            {
