@@ -31,8 +31,8 @@ const Inicio = ( props ) => {
         buscarArbitro()
     },[])
 
-    const bdata = arbitro.filter(x=>x.dni.toLowerCase().includes(texto.toString().toLowerCase()))
-
+    //const bdata = arbitro.filter(x=>x.dni.toLowerCase().includes(texto.toString().toLowerCase()))
+    const bdata = arbitro.filter(x => x.dni && x.dni.toString().includes(texto.toString()))
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
