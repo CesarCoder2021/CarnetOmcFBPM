@@ -9,7 +9,7 @@ import '../style/inicio.css';
 
 const Inicio = ( props ) => {
 
-    const [texto, setTexto] = useState([])
+    const [texto, setTexto] = useState('')
 
     const buscador = ( {target} ) => {
         setTexto(target.value)
@@ -31,8 +31,14 @@ const Inicio = ( props ) => {
         buscarArbitro()
     },[])
 
-    //const bdata = arbitro.filter(x=>x.dni.toLowerCase().includes(texto.toString().toLowerCase()))
-    const bdata = arbitro.filter(x => x.dni && x.dni.toString().includes(texto.toString()))
+    const textoBusqueda = typeof texto === 'string' ? texto : String(texto ?? '');
+    const bdata = arbitro.filter((x) => {
+        const dniValor = x?.dni;
+        if (dniValor === undefined || dniValor === null) {
+            return false;
+        }
+        return String(dniValor).toLowerCase().includes(textoBusqueda.toLowerCase());
+    });
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
